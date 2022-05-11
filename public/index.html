@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>CRUD Registro de usuario con NestJs</title>
+</head>
+<body>
+    <div class="registerFormContainer">
+        <h2 class="crud-title">Register User</h2>
+        <form action="" id="formulario">
+            <div class="flex">
+                <div class="inputBox" id="grupo__nombre">
+                    <label for="nombre" class="label">Your Name</label>
+                    <div class="grupo-input">
+                        <input type="text" name="nombre" id="nombre" placeholder="fernando" class="input">
+                        <i class="fas fa-times-circle validacion-estado"></i>
+                     </div>
+                     <p class="input-error">the name can only contain letters</p>
+                </div>
+                <div class="inputBox" id="grupo__apellido">
+                    <label for="apellido" class="label">Your LastName</label>
+                    <div class="grupo-input">
+                        <input type="text" name="apellido" id="apellido" placeholder="carrera" class="input">
+                        <i class="fas fa-times-circle validacion-estado"></i>
+                     </div>
+                     <p class="input-error">the name can only contain letters</p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="inputBox" id="grupo__usuario">
+                    <label for="usuario" class="label">Your User</label>
+                    <div class="grupo-input">
+                        <input type="text" name="usuario" id="usuario" placeholder="fersama07" class="input">
+                        <i class="fas fa-times-circle validacion-estado"></i>
+                     </div>
+                     <p class="input-error">the username must be from 4 to 16 digits can only contain numbers, letters and underscore</p>
+                </div>
+                <div class="inputBox" id="grupo__correo">
+                    <label for="correo" class="label">Your Email</label>
+                    <div class="grupo-input">
+                        <input type="email" name="correo" id="correo" placeholder="email@dominio.com" class="input">
+                         <i class="fas fa-times-circle validacion-estado"></i>
+                     </div>
+                     <p class="input-error">the email can only contain numbers, letters and underscore</p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="inputBox" id="grupo__telefono">
+                    <label for="telefono" class="label">Your Telephone</label>
+                    <div class="grupo-input">
+                        <input type="tel" name="telefono" id="telefono" placeholder="+584706464" class="input">
+                         <i class="fas fa-times-circle validacion-estado"></i>
+                     </div>
+                     <p class="input-error">telephone only must contain numbers and max 14 digits</p>
+                </div>
+                <div class="inputBox" id="grupo__country">
+                    <label for="country class="label">Country</label>
+                    <div class="grupo-input">
+                        <input type="text" name="country" id="country" placeholder="venezuela" class="input">
+                         <i class="fas fa-times-circle validacion-estado"></i>
+                     </div>
+                     <p class="input-error">the country can only contain letters</p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="inputBox">
+                    <label class="label" for="documentType">Document Type</label>
+                    <select name="select" id="documentType" class="input">
+                        <option value="V">V</option>
+                        <option value="E">E</option>
+                    </select>
+                </div>
+                <div class="inputBox" id="grupo__ci">
+                    <label for="ci" class="label">Your CI</label>
+                    <div class="grupo-input">
+                        <input type="text" name="ci" id="ci" placeholder="20993960" class="input">
+                         <i class="fas fa-times-circle validacion-estado"></i>
+                     </div>
+                     <p class="input-error">ci only must contain numbers between 7 and 9 digits</p>
+                </div>
+            </div>
+
+            <div class="mensaje" id="mensaje">
+                <p><i class="fas fa-exclamation-triangle"></i><b> Err</b> Please fill in all the fields correctly</p>
+            </div>
+            
+            <div class="btn-enviar">
+                 <button type="submit" value="register" class="btn">Register</button>
+                 <input type="hidden" name="id">
+                 <p class="mensaje-exito" id="mensaje-exito">Register Completed</p>
+            </div>
+        </form>
+
+        <article>
+            <h2>Users</h2>
+            <table class="crud-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Last Name</th>
+                  <th>username</th>
+                  <th>email</th>
+                  <th>telephone</th>
+                  <th>country</th>
+                  <th>Document Type</th>
+                  <th>CI</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </article>
+    
+          <template id="crud-template">
+            <tr>
+              <td class="name"></td>
+              <td class="lastname"></td>
+              <td class="username"></td>
+              <td class="email"></td>
+              <td class="telephone"></td>
+              <td class="country"></td>
+              <td class="documentT"></td>
+              <td class="ci"></td>
+              <td>
+                <button class="edit">Editar</button>
+                <button class="delete">Eliminar</button>
+              </td>
+            </tr>
+          </template>
+    </div>
+
+ 
+ <script src="registerManager.js"></script>
+</body>
+</html>

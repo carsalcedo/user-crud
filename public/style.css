@@ -1,0 +1,142 @@
+html{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after{
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.registerFormContainer {
+    padding: 2rem 2rem;
+  }
+
+.registerFormContainer form {
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    margin: 1rem auto;
+    max-width: 80rem;
+    animation: fadeUp 0.4s linear;
+  }
+  .registerFormContainer form .flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .registerFormContainer form .flex .inputBox {
+    width: 49%;
+    padding: 0.7rem 0;
+  }
+  .registerFormContainer form .flex .inputBox label {
+    font-size: 1rem;
+    color: #666;
+  }
+  .registerFormContainer form .flex .inputBox .grupo-input {
+    position: relative;
+  }
+  .registerFormContainer form .flex .inputBox .grupo-input input {
+    width: 100%;
+    margin-top: 0.5rem;
+    background: #f7f7f7;
+    border: 0.1rem solid transparent;
+    padding: 1rem 1.2rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    text-transform: none;
+    color: #130f40;
+    transition: 0.3s ease all;
+  }
+  .registerFormContainer form .flex .inputBox .grupo-input input:focus {
+    border: 0.1rem solid #FFD700;
+  }
+  .registerFormContainer form .flex .inputBox .grupo-input .validacion-estado {
+    font-size: 1rem;
+    position: absolute;
+    right: 0.6rem;
+    bottom: 1.2rem;
+    z-index: 100;
+    opacity: 0;
+  }
+  .registerFormContainer form .flex .inputBox .input-error {
+    margin-bottom: 0;
+    font-size: 1rem;
+    display: none;
+  }
+  .registerFormContainer form .flex .inputBox .input-error.active {
+    display: block;
+  }
+  .registerFormContainer form .flex .inputBox.correcto .validacion-estado {
+    color: #13b613;
+    opacity: 1;
+  }
+  .registerFormContainer form .flex .inputBox.incorrecto label {
+    color: red;
+  }
+  .registerFormContainer form .flex .inputBox.incorrecto .validacion-estado {
+    color: red;
+    opacity: 1;
+  }
+  .registerFormContainer form .flex .inputBox.incorrecto input {
+    border: 0.1rem solid red;
+  }
+  .registerFormContainer form .remember {
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  body.darck .registerFormContainer form .remember label {
+    color: #fff;
+  }
+  .registerFormContainer form .remember label {
+    font-size: 1rem;
+    cursor: pointer;
+    color: #130f40;
+  }
+  .registerFormContainer form .mensaje {
+    padding-top: 1rem;
+    font-size: 1rem;
+    color: red;
+    text-align: center;
+    display: none;
+  }
+  .registerFormContainer form .mensaje.active {
+    display: block;
+  }
+  .registerFormContainer form .btn-enviar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  .registerFormContainer form .btn-enviar .btn {
+    text-align: center;
+    margin-bottom: 1rem;
+    border-radius: .5rem;
+    background-color: #13b613;
+    cursor: pointer;
+  }
+  .registerFormContainer form .btn-enviar .mensaje-exito {
+    font-size: 1.5rem;
+    color: #13b613;
+    outline: none;
+    text-align: center;
+    display: none;
+  }
+  .registerFormContainer form .btn-enviar .mensaje-exito.active {
+    display: block;
+  }
+
+  .crud-table{
+    border: solid 1px #666;
+  }
+
