@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Delete, Res, HttpStatus, Body, Param, NotFoundException, Query } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Res, HttpStatus, Body, Param, NotFoundException, Query, Render } from '@nestjs/common';
 import { CreateuserDTO } from "./dto/user.dto";
 import {UserService} from './user.service';
 
@@ -16,12 +16,11 @@ export class UserController {
         })
     }
 
-    @Get('/')
-    async getUsers(@Res() res){
-        const users = await this.userService.getUsers();
-        return res.status(HttpStatus.OK).json({
-            users
-        })
+    @Get()
+    @Render('index')
+    async root(@Res() res){
+        return await this.userService.getUsers()
+               .then((result) => result ? {user: result} : {user: {}})         
     }
 
     @Get('/:userID')

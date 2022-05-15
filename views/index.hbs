@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="./js/bootstrap.min.js"></script>
     <title>CRUD Registro de usuario con NestJs</title>
 </head>
 <body>
     <div class="registerFormContainer">
-        <h2 class="crud-title">Register User</h2>
+        <h2 class="crud-title text-primary">User Register</h2>
         <form action="" id="formulario">
             <div class="flex">
                 <div class="inputBox" id="grupo__nombre">
@@ -27,7 +29,7 @@
                         <input type="text" name="apellido" id="apellido" placeholder="carrera" class="input">
                         <i class="fas fa-times-circle validacion-estado"></i>
                      </div>
-                     <p class="input-error">the name can only contain letters</p>
+                     <p class="input-error">the lastname can only contain letters</p>
                 </div>
             </div>
             <div class="flex">
@@ -69,7 +71,7 @@
             <div class="flex">
                 <div class="inputBox">
                     <label class="label" for="documentType">Document Type</label>
-                    <select name="select" id="documentType" class="input">
+                    <select name="documento" id="documentType" class="input">
                         <option value="V">V</option>
                         <option value="E">E</option>
                     </select>
@@ -96,44 +98,45 @@
         </form>
 
         <article>
-            <h2>Users</h2>
-            <table class="crud-table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Last Name</th>
-                  <th>username</th>
-                  <th>email</th>
-                  <th>telephone</th>
-                  <th>country</th>
-                  <th>Document Type</th>
-                  <th>CI</th>
-                  <th>Acciones</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
+            <h2 class="text-primary">Users</h2>
+            <table class="table crud-table">
+                <thead>
+                    <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">username</th>
+                    <th scope="col">email</th>
+                    <th scope="col">telephone</th>
+                    <th scope="col">Pais</th>
+                    <th scope="col">Type document</th>
+                    <th scope="col">CI</th>
+                    <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        {{#each user}}
+                        <tr>
+                            <td data-nombre={{nombre}}>{{nombre}}</td>
+                            <td data-apellido={{apellido}}>{{apellido}}</td>
+                            <td data-username={{username}}>{{username}}</td>
+                            <td data-email={{email}}>{{email}}</td>
+                            <td data-telefono={{telefono}}>{{telefono}}</td>
+                            <td data-pais={{pais}}>{{pais}}</td>
+                            <td data-documento={{documento}} class="text-center">{{documento}}</td>
+                            <td data-ci={{ci}}>{{ci}}</td>
+                             <td>
+                                <button class="edit bg-success" data-id={{_id}}>Editar</button>
+                                <button class="delete bg-danger" data-id={{_id}}>Eliminar</button>
+                            </td>
+                        </tr>
+                        {{/each}}
+                </tbody>
+                </table>
           </article>
     
-          <template id="crud-template">
-            <tr>
-              <td class="name"></td>
-              <td class="lastname"></td>
-              <td class="username"></td>
-              <td class="email"></td>
-              <td class="telephone"></td>
-              <td class="country"></td>
-              <td class="documentT"></td>
-              <td class="ci"></td>
-              <td>
-                <button class="edit">Editar</button>
-                <button class="delete">Eliminar</button>
-              </td>
-            </tr>
-          </template>
     </div>
 
  
- <script src="registerManager.js"></script>
+ <script src="./js/registerManager.js"></script>
 </body>
 </html>

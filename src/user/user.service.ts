@@ -11,7 +11,7 @@ export class UserService {
     constructor (@InjectModel('User') readonly userModel: Model<User>) {}
 
    async getUsers(): Promise<User[]> {
-       const users = await this.userModel.find()
+       const users = await this.userModel.find({})
         return users
     }
 
