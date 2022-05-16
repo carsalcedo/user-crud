@@ -7,7 +7,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [UserModule, 
-            MongooseModule.forRoot('mongodb://localhost/users-crud', {
+            MongooseModule.forRoot('mongodb://localhost/users-crud' || 'mongodb://process.env.PORT/users-crud', {
               useNewUrlParser: true
             })],
   controllers: [AppController],

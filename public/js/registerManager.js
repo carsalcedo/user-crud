@@ -80,6 +80,17 @@ d.addEventListener("submit", async e =>{
 	if(e.target === $formulario){
 		e.preventDefault();
 
+		if(campos.nombre && campos.apellido && campos.usuario && campos.correo && campos.telefono && campos.ci ){
+			d.getElementById('mensaje-exito').classList.add('active');
+			d.getElementById('mensaje').classList.remove('active');
+			setTimeout(() => {
+				d.getElementById('mensaje-exito').classList.remove('active');
+			}, 2000);
+			
+		}else{
+			d.getElementById('mensaje').classList.add('active');
+		}
+
 		if(!e.target.id.value){
 			//CREATE_POST
 			try {
@@ -103,12 +114,8 @@ d.addEventListener("submit", async e =>{
 				data = await res.json();
 
 				if (!res.ok) throw { status: res.status, statusText: res.statusText };
-				d.getElementById('mensaje-exito').classList.add('active');
-				d.getElementById('mensaje').classList.remove('active');
-				setTimeout(() => {
-					d.getElementById('mensaje-exito').classList.remove('active');
-				}, 2000);
 				location.reload();
+				
 
 			} catch (err) {
 				console.log(err)
