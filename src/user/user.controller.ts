@@ -16,7 +16,7 @@ export class UserController {
         })
     }
 
-    @Get()
+    @Get('/')
     @Render('index')
     async root(@Res() res){
         return await this.userService.getUsers()
